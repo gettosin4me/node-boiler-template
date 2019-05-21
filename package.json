@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require babel-register --recursive --exit",
     "start": "nodemon bin/app.js",
     "build": "rm -rf dist && minify app bin config providers -d dist",
     "build:dev": "rm -rf dist && webpack --env=development --mode development --watch",
@@ -25,6 +25,7 @@
     "convict": "^5.0.0",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
+    "fs": "0.0.1-security",
     "helmet": "^3.18.0",
     "mongoose": "^5.5.10"
   },
@@ -32,7 +33,7 @@
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/register": "^7.4.4",
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^7.0.0-0",
     "babel-loader": "^8.0.6",
     "babel-minify": "^0.5.0",
     "babel-minify-webpack-plugin": "^0.3.1",
@@ -44,6 +45,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.5.1",
+    "mocha": "^6.1.4",
     "nodemon-webpack-plugin": "^4.0.8",
     "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",

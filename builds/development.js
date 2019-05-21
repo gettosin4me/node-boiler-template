@@ -36,10 +36,11 @@ module.exports = merge(base, {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/',
+        publicPath: '/'
     },
     plugins: [
         new NodemonPlugin(nodemonConf),
         new MinifyPlugin(minifyPluginConf)
-    ]
+    ],
+    target: 'node'
 });
