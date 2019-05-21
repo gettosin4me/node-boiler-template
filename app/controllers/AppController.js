@@ -5,9 +5,9 @@ class AppController extends BaseController
 
     static index(req, res) {
         try {
-            return BaseController.success({ message: 'welcome' });
+            return BaseController.success({ message: 'welcome' }, req, res);
         } catch (e) {
-            return BaseController.handleError(e);
+            return BaseController.handleError(e, req, res);
         }
     }
 
