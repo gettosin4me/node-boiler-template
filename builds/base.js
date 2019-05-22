@@ -10,8 +10,6 @@ const paths = {
     }
 };
 
-console.log(paths.js);
-
 exports.entry = {
     app: paths.js
 };

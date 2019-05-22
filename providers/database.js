@@ -1,5 +1,3 @@
-'use strict'
-
 module.exports = {
     boot (mongoose, { config, options }) {
         // const url = 
@@ -11,4 +9,4 @@ module.exports = {
         });
         mongoose.Promise = global.Promise;
     }
-}
+};

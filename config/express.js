@@ -3,26 +3,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const i18n = require('i18n');
 const config = require('./../config');
 const routes = require('./../app/routes');
 const providers = require('./../providers');
-
-// mongoose options
-const mongooseOptions = {
-    useNewUrlParser: true,
-    useCreateIndex: true
-};
-
-// db.createUser(
-//   {
-//     user: "youverify",
-//     pwd: "mpwfJMfb3heN",
-//     roles: [ {role: 'dbOwner', db: 'youverify_background'} ]
-//   }
-// )
+const { mongooseOptions, i18nOptions } = require('./options');
 
 module.exports = () => {
-
     const app = express();
 
     // protect app from well known vulnerability
@@ -44,6 +31,9 @@ module.exports = () => {
 
     // initialise database
     providers.database.boot(mongoose, { config, options: mongooseOptions });
+
+    // init localization
+    providers.locale.boot(app, { i18n, i18nOptions });
 
     // bootstrap routes
     providers.routes.boot(app, { config, routes });
