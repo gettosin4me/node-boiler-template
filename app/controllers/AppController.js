@@ -2,12 +2,12 @@ import BaseController from './BaseController';
 
 class AppController extends BaseController
 {
-
     static index(req, res) {
         try {
-            return BaseController.success({ message: 'welcome' }, req, res);
+            return AppController.success({ message: res.__('user.unavailable') }, req, res);
         } catch (e) {
-            return BaseController.handleError(e, req, res);
+            console.log(e);
+            return AppController.handleError(e, req, res);
         }
     }
 

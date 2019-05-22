@@ -4,18 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-register --recursive --exit",
-    "start": "nodemon bin/app.js",
+    "start": "nodemon -w config -w app -w providers bin/app.js",
     "build": "rm -rf dist && minify app bin config providers -d dist",
     "build:dev": "rm -rf dist && webpack --env=development --mode development --watch",
-    "build:prod": "rm -rf dist && webpack --env=production --mode production --watch"
+    "build:prod": "rm -rf dist && webpack --env=production --mode production --watch",
+    "test": "mocha --require babel-register --recursive --exit"
   },
   "keywords": [
     "Boiler",
     "template",
     "node",
     "template",
-    "youverify",
     "template"
   ],
   "author": "Akomolafe Tosin",
@@ -27,6 +26,7 @@
     "express": "^4.17.0",
     "fs": "0.0.1-security",
     "helmet": "^3.18.0",
+    "i18n": "^0.8.3",
     "mongoose": "^5.5.10"
   },
   "devDependencies": {

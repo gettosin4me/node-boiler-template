@@ -13,7 +13,7 @@ const nodemonConf = {
     watch: path.resolve('./dist'),
 
     // Files to ignore.
-    ignore: [ '*.js.map', '../node_modules', '../dist' ],
+    ignore: [ '*.js.map', './node_modules', './dist', './package.json' ],
 
     // Detailed log.
     verbose: true,
