@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm run build",
     "start": "nodemon bin/app.js",
     "build": "rm -rf dist && webpack --env=development --mode development --watch",
     "test": "mocha --require babel-register --recursive --exit",
