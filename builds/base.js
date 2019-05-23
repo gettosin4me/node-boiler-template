@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const WebpackNodeExternal = require('webpack-node-externals');
 
 const paths = {
-    js: path.resolve(__dirname, './../config/index.js'),
+    js: path.resolve(__dirname, './../bin/app.js'),
     files: [ './package.json', './.gitignore' ],
     test: {
         integration: './test/integration/**/*.js',
@@ -37,3 +38,15 @@ exports.plugins = [
         'process.env.NODE_ENV': JSON.stringify('development')
     })
 ];
+
+exports.externals = [
+    WebpackNodeExternal()
+];
+
+exports.target = 'node';
+
+exports.node = {
+    // Need this when working with express, otherwise the build fails
+    __dirname: false, // if you don't put this is, __dirname
+    __filename: false // and __filename return blank or /
+};

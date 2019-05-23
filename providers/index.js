@@ -1,5 +1,5 @@
 import RouteProvider from './route';
-import DatabaseProvider from './database';
+import DatabaseProvider from './database.js';
 import LocaleProvider from './locale';
 
 module.exports = {
