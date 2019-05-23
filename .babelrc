@@ -3,5 +3,11 @@
     "ignore": [
         "node_modules",
         "dist",
-    ]
+    ],
+    "plugins": [
+        ["transform-es2015-modules-commonjs", {
+          "allowTopLevelThis": true
+        }]
+    ],
+    "sourceType": "module"
 }
