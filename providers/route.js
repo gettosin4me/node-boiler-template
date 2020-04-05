@@ -1,5 +1,5 @@
 module.exports = {
     boot(app, { config, routes }) {
-        app.use(routes());
+        app.use('/api/v1/', routes());
     }
 };

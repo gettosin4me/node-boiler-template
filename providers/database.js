@@ -1,12 +1,12 @@
+const config = require('../config');
+
 module.exports = {
-    boot (mongoose, { config, options }) {
-        // const url = 
-        mongoose.connect(config.get('database.url'), options).then(connection => {
-            console.log('database connected')
-        }).catch (error => {
-            console.log(config.get('database.url'))
-            console.log(error.message)
-        });
-        mongoose.Promise = global.Promise;
+    boot({ options }) {
+        const pg = require('pg-promise')(options);
+
+        //  pass database connection string
+        const db = pg(config.get('database.url'));
+
+        return db;
     }
 };

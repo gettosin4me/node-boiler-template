@@ -1,0 +1,2 @@
+::1 - - [13/Mar/2020:07:32:51 +0000] "GET /v1/api HTTP/1.1" 400 105 "-" "PostmanRuntime/7.22.0"
+::1 - - [13/Mar/2020:07:33:03 +0000] "GET /api/v1 HTTP/1.1" 200 129 "-" "PostmanRuntime/7.22.0"

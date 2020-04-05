@@ -1,15 +1,18 @@
-// mongoose options
-const mongooseOptions = {
-    useNewUrlParser: true,
-    useCreateIndex: true
+const bluebird = require('bluebird');
+const config = require('../config');
+
+// pg options
+const pgOptions = {
+    promiseLib: bluebird,
+    noLocking: true
 };
 
 const i18nOptions = {
     locales: [ 'en', 'fr' ],
-    defaultLocale: 'fr',
+    defaultLocale: config.get('server.app.locale'),
     directory: `${__dirname}/../locales`,
     queryParameter: 'lang',
     autoReload: true
 };
 
-module.exports = { mongooseOptions, i18nOptions };
+module.exports = { pgOptions, i18nOptions };

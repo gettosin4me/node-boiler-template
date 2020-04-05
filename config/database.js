@@ -1,11 +1,20 @@
-const db = {
-    host: process.env.DATABASE_HOST || 'localhost',
-    name: process.env.DATABASE_NAME || 'youverify_identity',
-    user: process.env.DATABASE_USER || 'youverify',
-    port: process.env.DATABASE_PORT || '27017',
-    password: process.env.DATABASE_PASSWORD
-};
+let url;
+
+switch (process.env.APP_ENV.toLowerCase()) {
+        case 'development':
+            url = process.env.DATABASE_DEVELOPMENT_URL;
+            break;
+        case 'test':
+            url = process.env.DATABASE_TEST_URL;
+            break;
+        case 'production':
+            url = process.env.DATABASE_PRODUCTION_URL;
+            break;
+        default:
+            url = process.env.DATABASE_DEVELOPMENT_URL;
+            break;
+}
 
 exports.database = {
-    url: `mongodb://${db.user}:${db.password}@${db.host}:${db.port}/${db.name}`
+    url
 };

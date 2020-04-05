@@ -1,4 +1,5 @@
 {
   "invalid.error": "Unknown error",
-  "user.unavailable": "User not found"
+  "user.unavailable": "User not found",
+  "welcome.text": "Connected successfully"
 }

@@ -10,5 +10,6 @@ const config = convict({
 
 config.load(require('./server'));
 config.load(require('./database'));
+config.load(require('./rabbitmq'));
 
 module.exports = config;
